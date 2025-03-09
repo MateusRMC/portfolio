@@ -1,6 +1,5 @@
-export async function POST(req) {
-  const data = await req.json();
-  return new Response(JSON.stringify({ received: data }), {
+export async function GET() {
+  return new Response(JSON.stringify({ message: "Hello, API!" }), {
     headers: { "Content-Type": "application/json" },
   });
 }
