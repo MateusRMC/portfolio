@@ -1,8 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  width: 100vw;
+  height: 100vh;
   background-color: #101010;
   color: white;
   display: flex;
@@ -11,41 +10,43 @@ body {
   justify-content: center;
 }
 
-#content {
-  width: 80%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
-
 #header {
   text-align: center;
   width: 100vw;
   font-family: axis;
 }
 
+#right {
+  text-align: center;
+}
+
 #signature-container {
-  width: auto;
-  max-width: 80vw;
+  width: 100vw;
   text-align: center;
   overflow: hidden;
 }
 
 .signature {
-  width: 200px; /* Reduzi o tamanho da assinatura */
+  width: 300px;
   transform: rotate(4deg);
+}
+
+#content {
+  margin: auto;
+  display: flex;
+  height: 100vh;
+  width: 80vw;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #links {
   font-family: axis;
-  font-size: 3rem; /* Reduzi de 5rem para 3rem */
+  font-size: 5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 a {
@@ -64,17 +65,11 @@ p {
 footer {
   text-align: center;
   width: 100vw;
-  margin-top: 20px;
-}
-
-#text-box {
-  text-align: center;
-  max-width: 60vw;
 }
 
 #right img {
   width: 100%;
-  max-width: 15rem; /* Diminuí o tamanho da imagem */
+  max-width: 20rem;
   border-radius: 10px;
   margin-top: 10px;
 }

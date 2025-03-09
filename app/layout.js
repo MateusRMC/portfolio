@@ -1,4 +1,4 @@
-import "@/app/globals.css"; // Importando CSS puro
+import "@/app/home.css"; // Importando CSS puro
 
 export default function RootLayout({ children }) {
   return (

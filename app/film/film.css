@@ -1,0 +1,226 @@
+/* RESET GERAL */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #101010;
+  color: #fff;
+  font-family: Aribau Grotesk Trial, sans-serif;
+}
+
+/* HEADER */
+#header {
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+}
+
+#header h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+#header p {
+  font-style: italic;
+}
+
+/* NAVIGATION MENU */
+#nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #101010;
+  position: relative;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+#nav-links {
+  display: flex;
+  gap: 50px;
+}
+
+#nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#nav a:hover {
+  color: #ff9000;
+}
+
+/* BotÃ£o de menu para mobile */
+#menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+/* Menu responsivo */
+@media (max-width: 768px) {
+  #nav {
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #101010;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  #nav-links a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  #nav-links.active {
+    display: flex;
+  }
+}
+
+/* GRID DE VÃDEOS */
+#content {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* CORRIGIR QUEBRA DO GRID NO MOBILE */
+@media (max-width: 600px) {
+  #content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* EstilizaÃ§Ã£o dos Projetos */
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Ajuste da thumbnail */
+.thumbnail {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.thumbnail:hover {
+  opacity: 0.8;
+}
+
+h2 {
+  font-weight: 400;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* MODAL DE VÃDEO */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  background: #101010;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Corrige o tamanho do iframe */
+.modal iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+}
+
+/* SeÃ§Ã£o de informaÃ§Ãµes do projeto */
+.project-info {
+  text-align: left;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.project-info h2 {
+  font-size: 1.8rem;
+  color: #ff9000;
+}
+
+.project-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.project-info h3 {
+  margin-top: 15px;
+  font-size: 1.4rem;
+}
+
+.project-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.project-info ul li {
+  background: #ff9000;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #101010;
+}
+
+/* BotÃ£o de fechar */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ff9000;
+}
