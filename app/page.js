@@ -1,26 +1,26 @@
-"use client"; // Para código interativo no Next.js
+"use client"; // Permite manipulação de estado no Next.js
 
 import { useState } from "react";
 
 export default function Home() {
   const originalContent = (
     <p>
-      Art and business are my passion. -{" "}
-      <a href="/contact" style={{ color: "orange", textDecoration: "none" }}>
-        Mateus Rocha
-      </a>
+      Art and business are my passion. - <a href="/contact">Mateus Rocha</a>
     </p>
   );
 
   const [infoText, setInfoText] = useState(originalContent);
 
-  // Dados dinâmicos para cada link
+  // Conteúdos dinâmicos
   const contentData = {
     film: (
       <>
         <h2>Film projects</h2>
-        <div>
-          <img src="/images/film.gif" alt="Film" />
+        <div id="preview">
+          <img
+            src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
+            alt="Film"
+          />
         </div>
         <p>
           Videoclips, Social Media, Webseries, Documentaries, short-films and
@@ -31,8 +31,11 @@ export default function Home() {
     design: (
       <>
         <h2>Graphic and UX Design</h2>
-        <div>
-          <img src="/images/design.gif" alt="Design" />
+        <div id="preview">
+          <img
+            src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
+            alt="Design"
+          />
         </div>
         <p>Expression and functionality across many projects!</p>
       </>
@@ -40,8 +43,11 @@ export default function Home() {
     photography: (
       <>
         <h2>Capturing life through lenses</h2>
-        <div>
-          <img src="/images/photography.gif" alt="Photography" />
+        <div id="preview">
+          <img
+            src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
+            alt="Photography"
+          />
         </div>
         <p>Short-films, documentaries, branded content, ads & more!</p>
       </>
@@ -49,8 +55,11 @@ export default function Home() {
     brands: (
       <>
         <h2>Branding is where I shine</h2>
-        <div>
-          <img src="/images/brands.gif" alt="Brands" />
+        <div id="preview">
+          <img
+            src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
+            alt="Brands"
+          />
         </div>
         <p>Personal, film, fashion and marketing brands I worked with.</p>
       </>
@@ -75,16 +84,18 @@ export default function Home() {
   }
 
   return (
-    <div className="container">
-      {/* Assinatura */}
-      <div className="signature">
-        <img src="/images/signature.png" alt="Signature" />
+    <div id="content">
+      <div id="signature-container">
+        <img
+          className="signature"
+          src="/images/signature.png"
+          alt="Signature"
+        />
       </div>
 
-      {/* Links */}
-      <div>
+      <div id="left">
         {["film", "design", "photography", "brands", "me"].map((category) => (
-          <h1 key={category}>
+          <h1 id="links" key={category}>
             <a
               href="#"
               onMouseOver={() => updateContent(category)}
@@ -96,11 +107,13 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Texto Dinâmico */}
-      <div className="text-box">{infoText}</div>
+      <div id="right">{infoText}</div>
 
-      {/* Rodapé */}
-      <footer>&copy; Updated in 2025 - portfolio coded by Mateus :)</footer>
+      <footer>
+        <p style={{ color: "#595959" }}>
+          &copy; Updated in 2025 - portfolio coded by Mateus :)
+        </p>
+      </footer>
     </div>
   );
 }
