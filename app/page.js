@@ -1,95 +1,106 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"; // Para código interativo no Next.js
+
+import { useState } from "react";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const originalContent = (
+    <p>
+      Art and business are my passion. -{" "}
+      <a href="/contact" style={{ color: "orange", textDecoration: "none" }}>
+        Mateus Rocha
+      </a>
+    </p>
+  );
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  const [infoText, setInfoText] = useState(originalContent);
+
+  // Dados dinâmicos para cada link
+  const contentData = {
+    film: (
+      <>
+        <h2>Film projects</h2>
+        <div>
+          <img src="/images/film.gif" alt="Film" />
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <p>
+          Videoclips, Social Media, Webseries, Documentaries, short-films and
+          more!
+        </p>
+      </>
+    ),
+    design: (
+      <>
+        <h2>Graphic and UX Design</h2>
+        <div>
+          <img src="/images/design.gif" alt="Design" />
+        </div>
+        <p>Expression and functionality across many projects!</p>
+      </>
+    ),
+    photography: (
+      <>
+        <h2>Capturing life through lenses</h2>
+        <div>
+          <img src="/images/photography.gif" alt="Photography" />
+        </div>
+        <p>Short-films, documentaries, branded content, ads & more!</p>
+      </>
+    ),
+    brands: (
+      <>
+        <h2>Branding is where I shine</h2>
+        <div>
+          <img src="/images/brands.gif" alt="Brands" />
+        </div>
+        <p>Personal, film, fashion and marketing brands I worked with.</p>
+      </>
+    ),
+    me: (
+      <>
+        <h2>About Myself</h2>
+        <img src="/images/profile.png" alt="Mateus Rocha" />
+        <p>A little more about myself and my journey.</p>
+      </>
+    ),
+  };
+
+  function updateContent(key) {
+    setInfoText(contentData[key]);
+  }
+
+  function resetContent() {
+    setTimeout(() => {
+      setInfoText(originalContent);
+    }, 500);
+  }
+
+  return (
+    <div className="container">
+      {/* Assinatura */}
+      <div className="signature">
+        <img src="/images/signature.png" alt="Signature" />
+      </div>
+
+      {/* Links */}
+      <div>
+        {["film", "design", "photography", "brands", "me"].map((category) => (
+          <h1 key={category}>
+            <a
+              href="#"
+              onMouseOver={() => updateContent(category)}
+              onMouseOut={resetContent}
+            >
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </a>
+          </h1>
+        ))}
+      </div>
+
+      {/* Texto Dinâmico */}
+      <div className="text-box">{infoText}</div>
+
+      {/* Rodapé */}
+      <footer>&copy; Updated in 2025 - portfolio coded by Mateus :)</footer>
     </div>
   );
 }
