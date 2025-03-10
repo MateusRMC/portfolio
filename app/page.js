@@ -1,11 +1,13 @@
 "use client"; // Permite manipulação de estado no Next.js
 
 import { useState } from "react";
+import Link from "next/link"; // Usar Link do Next.js para navegação otimizada
 
 export default function Home() {
   const originalContent = (
     <p>
-      Art and business are my passion. - <a href="/contact">Mateus Rocha</a>
+      Art and business are my passion. -{" "}
+      <Link href="/contact">Mateus Rocha</Link>
     </p>
   );
 
@@ -67,7 +69,7 @@ export default function Home() {
     me: (
       <>
         <h2>About Myself</h2>
-        <img src="profile.png" alt="Mateus Rocha" />
+        <img src="/profile.png" alt="Mateus Rocha" />
         <p>A little more about myself and my journey.</p>
       </>
     ),
@@ -86,19 +88,19 @@ export default function Home() {
   return (
     <div id="content">
       <div id="signature-container">
-        <img className="signature" src="signature.png" alt="Signature" />
+        <img className="signature" src="/signature.png" alt="Signature" />
       </div>
 
       <div id="left">
         {["film", "design", "photography", "brands", "me"].map((category) => (
           <h1 id="links" key={category}>
-            <a
-              href="#"
+            <Link
+              href={`/${category}`} // Agora os links levam para as pastas dos projetos
               onMouseOver={() => updateContent(category)}
               onMouseOut={resetContent}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
-            </a>
+            </Link>
           </h1>
         ))}
       </div>

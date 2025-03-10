@@ -1,4 +1,4 @@
-import "@/app/home.css"; // Importando CSS puro
+import "./home.css";
 
 export default function RootLayout({ children }) {
   return (
@@ -8,7 +8,6 @@ export default function RootLayout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="My portfolio" />
         <meta name="author" content="Mateus Rocha" />
-        <link rel="stylesheet" href="/globals.css" />
       </head>
       <body>{children}</body>
     </html>
