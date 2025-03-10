@@ -10,8 +10,10 @@ body {
 /* HEADER */
 #header {
   text-align: center;
-  width: fit-content;
-  margin: auto;
+  width: 100vw !important; /* Faz o header ocupar toda a largura */
+  padding: 20px 0;
+  background: #151515; /* Adiciona um fundo visível */
+  border-bottom: 2px solid #ff9000; /* Apenas para visualizar melhor */
 }
 
 #header h1 {
