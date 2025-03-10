@@ -19,7 +19,7 @@ export default function Home() {
       <>
         <h2>Film projects</h2>
         <div id="preview">
-          <img
+          <image
             src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
             alt="Film"
           />
@@ -34,7 +34,7 @@ export default function Home() {
       <>
         <h2>Graphic and UX Design</h2>
         <div id="preview">
-          <img
+          <image
             src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
             alt="Design"
           />
@@ -46,7 +46,7 @@ export default function Home() {
       <>
         <h2>Capturing life through lenses</h2>
         <div id="preview">
-          <img
+          <image
             src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
             alt="Photography"
           />
@@ -58,7 +58,7 @@ export default function Home() {
       <>
         <h2>Branding is where I shine</h2>
         <div id="preview">
-          <img
+          <image
             src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
             alt="Brands"
           />
@@ -69,7 +69,7 @@ export default function Home() {
     me: (
       <>
         <h2>About Myself</h2>
-        <img src="/profile.png" alt="Mateus Rocha" />
+        <image src="/profile.png" alt="Mateus Rocha" />
         <p>A little more about myself and my journey.</p>
       </>
     ),
@@ -88,7 +88,7 @@ export default function Home() {
   return (
     <div id="content">
       <div id="signature-container">
-        <img className="signature" src="/signature.png" alt="Signature" />
+        <image className="signature" src="/signature.png" alt="Signature" />
       </div>
 
       <div id="left">

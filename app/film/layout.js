@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import "./categoria.css";
+import Link from "next/link"; // Usar Link do Next.js para navegação otimizada
 
 export default function CategoriaLayout({ children }) {
   return (
@@ -10,14 +11,14 @@ export default function CategoriaLayout({ children }) {
         <nav id="nav">
           <button id="menu-toggle">☰</button>
           <div id="nav-links">
-            <a href="/">Home</a>
-            <a className="selected" href="#">
+            <link href="/">Home</link>
+            <link className="selected" href="#">
               Film
-            </a>
-            <a href="/design">Design</a>
-            <a href="/photo">Photography</a>
-            <a href="/brands">Brands</a>
-            <a href="/myself">Myself</a>
+            </link>
+            <link href="/design">Design</link>
+            <link href="/photo">Photography</link>
+            <link href="/brands">Brands</link>
+            <link href="/myself">Myself</link>
           </div>
         </nav>
         <h1>Film</h1>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
+import Image from "next/image";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -39,7 +40,7 @@ export default function Film() {
             className="project-card"
             onClick={() => setSelectedProject(project)}
           >
-            <img
+            <Image
               className="thumbnail"
               src={project.media[0]}
               alt={project.title}
