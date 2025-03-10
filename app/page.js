@@ -19,7 +19,7 @@ export default function Home() {
       <>
         <h2>Film projects</h2>
         <div id="preview">
-          <image
+          <Image
             src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
             alt="Film"
           />
