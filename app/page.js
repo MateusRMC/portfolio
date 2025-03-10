@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link"; // Usar Link do Next.js para navegação otimizada
+import Image from "next/image";
 
 export default function Home() {
   const originalContent = (
@@ -22,6 +23,8 @@ export default function Home() {
           <Image
             src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
             alt="Film"
+            height={1}
+            style={{ height: "auto" }}
           />
         </div>
         <p>
@@ -34,9 +37,12 @@ export default function Home() {
       <>
         <h2>Graphic and UX Design</h2>
         <div id="preview">
-          <image
+          <Image
             src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
             alt="Design"
+            width={320}
+            height={1}
+            style={{ height: "auto" }}
           />
         </div>
         <p>Expression and functionality across many projects!</p>
@@ -46,9 +52,12 @@ export default function Home() {
       <>
         <h2>Capturing life through lenses</h2>
         <div id="preview">
-          <image
+          <Image
             src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
             alt="Photography"
+            width={320}
+            height={1}
+            style={{ height: "auto" }}
           />
         </div>
         <p>Short-films, documentaries, branded content, ads & more!</p>
@@ -58,9 +67,12 @@ export default function Home() {
       <>
         <h2>Branding is where I shine</h2>
         <div id="preview">
-          <image
+          <Image
             src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
             alt="Brands"
+            width={320}
+            height={1}
+            style={{ height: "auto" }}
           />
         </div>
         <p>Personal, film, fashion and marketing brands I worked with.</p>
@@ -69,7 +81,7 @@ export default function Home() {
     me: (
       <>
         <h2>About Myself</h2>
-        <image src="/profile.png" alt="Mateus Rocha" />
+        <Image src="/profile.png" alt="Mateus Rocha" />
         <p>A little more about myself and my journey.</p>
       </>
     ),
@@ -88,7 +100,14 @@ export default function Home() {
   return (
     <div id="content">
       <div id="signature-container">
-        <image className="signature" src="/signature.png" alt="Signature" />
+        <Image
+          className="signature"
+          src="/signature.png"
+          alt="Signature"
+          width={320}
+          height={1}
+          style={{ height: "auto" }}
+        />
       </div>
 
       <div id="left">
