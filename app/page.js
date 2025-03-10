@@ -67,7 +67,7 @@ export default function Home() {
     me: (
       <>
         <h2>About Myself</h2>
-        <img src="/images/profile.png" alt="Mateus Rocha" />
+        <img src="profile.png" alt="Mateus Rocha" />
         <p>A little more about myself and my journey.</p>
       </>
     ),
@@ -86,11 +86,7 @@ export default function Home() {
   return (
     <div id="content">
       <div id="signature-container">
-        <img
-          className="signature"
-          src="/images/signature.png"
-          alt="Signature"
-        />
+        <img className="signature" src="signature.png" alt="Signature" />
       </div>
 
       <div id="left">
