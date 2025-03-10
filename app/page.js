@@ -23,6 +23,7 @@ export default function Home() {
           <Image
             src="https://cdn.pixabay.com/animation/2023/02/12/02/01/02-01-27-439_512.gif"
             alt="Film"
+            width={320}
             height={1}
             style={{ height: "auto" }}
           />
