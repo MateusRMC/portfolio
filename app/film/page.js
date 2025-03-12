@@ -1,12 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
 import Image from "next/image";
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Film() {
   const [projects, setProjects] = useState([]);
@@ -14,11 +9,21 @@ export default function Film() {
 
   useEffect(() => {
     async function fetchProjects() {
-      let { data, error } = await supabase.from("film_content").select("*");
+      try {
+        const response = await fetch("/api/projects/film");
 
-      if (error) {
-        console.error("Erro ao buscar projetos:", error);
-      } else {
+        // ⚠️ Verifica se a resposta está vazia ou inválida
+        if (!response.ok) {
+          throw new Error(`Erro na API: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        // ⚠️ Verifica se os dados são um array
+        if (!Array.isArray(data)) {
+          throw new Error("A resposta da API não é um array.");
+        }
+
         const formattedData = data.map((project) => ({
           ...project,
           media: project.media ? [project.media] : [],
@@ -27,13 +32,14 @@ export default function Film() {
             : [],
         }));
 
-        console.log("🔹 Dados formatados:", formattedData);
         setProjects(formattedData);
+      } catch (error) {
+        console.error("Erro ao buscar projetos:", error.message);
       }
     }
 
     fetchProjects();
-  }, []); // <- Esse é o único useEffect permitido!
+  }, []);
 
   return (
     <div id="content">
@@ -41,14 +47,13 @@ export default function Film() {
         <p>Nenhum projeto encontrado.</p>
       ) : (
         projects.map((project) => {
-          // Verifica se project.media existe, é um array e tem uma string válida
           const imageUrl =
             project.media &&
             Array.isArray(project.media) &&
             typeof project.media[0] === "string" &&
             project.media[0].startsWith("http")
               ? project.media[0]
-              : "/fallback.jpg"; // Imagem de fallback
+              : "/fallback.jpg";
 
           return (
             <div
@@ -102,7 +107,7 @@ export default function Film() {
                     <li key={index}>{role}</li>
                   ))
                 ) : (
-                  <li>Nenhum papel definido</li>
+                  <li>No role defined</li>
                 )}
               </ul>
             </div>

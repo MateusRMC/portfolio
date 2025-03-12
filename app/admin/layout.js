@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./categoria.css"; // Importando o CSS corretamente
+import "@/app/film/categoria.css"; // Importando o CSS corretamente
 
 export default function CategoriaLayout({ children }) {
   return (
