@@ -1,84 +1,93 @@
-/* RESET GERAL */
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   background-color: #101010;
   color: #fff;
-  font-family: Aribau Grotesk Trial, sans-serif;
-}
-
-/* HEADER */
-#header {
+  font-family: "Aribau Grotesk Trial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   text-align: center;
-  width: 100vw !important; /* Faz o header ocupar toda a largura */
-  padding: 20px 0;
-  background: #151515; /* Adiciona um fundo visível */
-  border-bottom: 2px solid #ff9000; /* Apenas para visualizar melhor */
 }
 
-#header h1 {
-  font-size: 4rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-}
-
-#header p {
-  font-style: italic;
-}
-
-/* NAVIGATION MENU */
-#nav {
+/* NAVEGAÇÃO */
+nav {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
-  background: #101010;
-  margin-top: 4rem;
-  margin-bottom: 3rem;
+  padding: 40px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-#nav-links {
+nav ul {
   display: flex;
-  gap: 50px;
+  gap: 40px;
+  list-style: none;
 }
 
-#nav a {
+nav a {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
+  padding: 3px 20px;
 }
 
-#nav a:hover {
+nav a:hover {
   color: #ff9000;
 }
 
-/* GRID DE VÍDEOS */
+/* HEADER */
+header {
+  margin-top: 80px;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+header p {
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+/* CONTEÚDO PRINCIPAL */
 #content {
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   padding: 20px;
   max-width: 1200px;
-  margin: auto;
 }
 
-/* Estilização dos Projetos */
+/* ESTILIZAÇÃO DOS PROJETOS */
 .project-card {
   text-align: center;
   cursor: pointer;
-}
-
-.thumbnail {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 10px;
   transition: 0.3s;
 }
 
-.thumbnail:hover {
+.project-card img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.project-card:hover {
   opacity: 0.8;
 }
 

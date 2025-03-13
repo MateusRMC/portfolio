@@ -66,8 +66,8 @@ export default function Film() {
                   className="thumbnail"
                   src={imageUrl}
                   alt={project.title || "Projeto sem título"}
-                  width={320}
-                  height={180}
+                  width={380}
+                  height={220}
                   priority
                 />
               ) : (
