@@ -16,24 +16,23 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
+        <nav id="nav-links">
+          <Link href="/">Home</Link>
+          <Link href="/film">Film</Link>
+          <Link href="/design">Design</Link>
+          <Link href="/photography">Photography</Link>
+          <Link href="/brands">Brands</Link>
+          <Link href="/myself">About</Link>
+        </nav>
         <div id="signature-container">
           <Image
             className="signature"
             src="/signature.png"
             alt="Signature"
             width={250}
-            height={80}
-            priority
+            height={100}
           />
         </div>
-        <nav id="nav-links">
-          <Link href={"/"}>Home</Link>
-          <Link href="/film">Film</Link>
-          <Link href="/design">Design</Link>
-          <Link href="/photography">Photography</Link>
-          <Link href="/brands">Brands</Link>
-          <Link href="/me">About</Link>
-        </nav>
         <main>{children}</main>
         <footer>
           <p>&copy; 2025 - Portfolio coded by Mateus Rocha</p>
