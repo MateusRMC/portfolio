@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default async function UsersPage() {
-  const res = await fetch("http://localhost:3000/api/play");
+  const res = await fetch("/api/play");
   const users = await res.json();
   return (
     <div>
