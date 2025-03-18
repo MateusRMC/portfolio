@@ -1,0 +1,124 @@
+/* Painel de Administração */
+#admin-panel {
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.05); /* Fundo translúcido */
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Título */
+#admin-panel h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* Formulário */
+#admin-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+#admin-panel label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Inputs e Textareas */
+#admin-panel input,
+#admin-panel select,
+#admin-panel textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#admin-panel textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+/* Efeito de Foco */
+#admin-panel input:focus,
+#admin-panel select:focus,
+#admin-panel textarea:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Botão */
+#admin-panel button {
+  background: linear-gradient(135deg, #ff007f, #ff4d00);
+  color: white;
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#admin-panel button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Mensagens de Sucesso e Erro */
+#admin-panel p.success {
+  background: rgba(0, 255, 127, 0.2);
+  color: #00ff7f;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#admin-panel p.error {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff4d4d;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #admin-panel {
+    width: 95%;
+    padding: 20px;
+  }
+
+  #admin-panel h1 {
+    font-size: 1.5rem;
+  }
+
+  #admin-panel input,
+  #admin-panel select,
+  #admin-panel textarea {
+    font-size: 0.9rem;
+  }
+
+  #admin-panel button {
+    font-size: 0.9rem;
+  }
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import "../styles/admin.css";
 
 export default function Admin() {
   const [formData, setFormData] = useState({

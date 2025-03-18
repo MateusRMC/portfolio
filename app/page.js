@@ -8,9 +8,6 @@ export default function Home() {
   return (
     <div className="Links">
       <h1>
-        <Link href="/">Home</Link>
-      </h1>
-      <h1>
         <Link href="/film">Film</Link>
       </h1>
       <h1>
