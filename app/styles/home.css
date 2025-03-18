@@ -1,0 +1,45 @@
+/* Contêiner do menu */
+.Links {
+  position: absolute;
+  bottom: 10vh;
+  left: 5vw;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+}
+
+/* Estilo dos links */
+.Links h1 {
+  margin: 0;
+  font-size: 6vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.Links h1 a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+/* Efeito hover */
+.Links h1:hover {
+  opacity: 0.7;
+  transform: translateX(10px);
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+  .Links {
+    left: 3vw;
+    bottom: 5vh;
+  }
+
+  .Links h1 {
+    font-size: 8vw;
+  }
+}
