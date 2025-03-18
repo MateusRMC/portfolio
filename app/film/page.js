@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import "../styles/film.css";
 
 export default function Film() {
   const [projects, setProjects] = useState([]);
@@ -44,7 +45,7 @@ export default function Film() {
   return (
     <div id="content">
       {projects.length === 0 ? (
-        <p>Nenhum projeto encontrado.</p>
+        <p>Searching for projects...</p>
       ) : (
         projects.map((project) => {
           const imageUrl =
